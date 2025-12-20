@@ -259,3 +259,5 @@ x8024400A,WU_E_PT_SOAPCLIENT_PARSE,Same as SOAPCLIENT_PARSE_ERROR - SOAP client 
 0x8024D010,WU_E_SETUP_INVALID_REGISTRY_DATA,Windows Update Agent couldn't be updated because the registry contains invalid information.
 0x8024D013,WU_E_SETUP_WRONG_SERVER_VERSION,Windows Update Agent couldn't be updated because the server doesn't contain update information for this version.
 0x8024DFFF,WU_E_SETUP_UNEXPECTED,Windows Update Agent couldn't be updated because of an error not covered by another WU_E_SETUP_* error code.
+0x80070070,None,The error occurs because not enough disk space exists on your physical computer or VM to store Windows updates for installation.
+0x80070643,ERROR_INSTALL_FAILURE,Windows Update Agent was unable to install due to running out of space in the recovery partition. Manual steps are necessary to complete the installation of this update on devices which are experiencing this error. 
