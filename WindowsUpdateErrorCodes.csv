@@ -291,10 +291,3 @@ x8024400A,WU_E_PT_SOAPCLIENT_PARSE,Same as SOAPCLIENT_PARSE_ERROR - SOAP client 
 0x80070BC9,ERROR_FAIL_REBOOT_REQUIRED,The TrustedInstaller service startup type is set to Manual by Group Policy (GPO) which prevented it from starting to complete pending operations. Further troubleshooting steps can be found here: https://learn.microsoft.com/en-us/troubleshoot/windows-client/installing-updates-features-roles/common-windows-update-errors#0x80070bc9-1
 0x800706BE,Failed to install cumulative updates,The last cumulative update failed to install and was corrupted. To resolve this issue navigate to the registry key for the corrupted update package. Change the current state value to 000020 hex (32 dec) - resolved or 000040 hex (64 dec) - staged or 000070 hex (112 dec) - installed.
 0x80240438,WU_E_PT_ENDPOINT_UNREACHABLE,There is no route or network connectivity to the endpoint. Please check WSUS server configuration and connectivity.
-
-
-
-
-
-
-
