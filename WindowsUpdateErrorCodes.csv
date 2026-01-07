@@ -261,8 +261,7 @@ x8024400A,WU_E_PT_SOAPCLIENT_PARSE,Same as SOAPCLIENT_PARSE_ERROR - SOAP client 
 0x80070070,None,The error occurs because not enough disk space exists on your physical computer or VM to store Windows updates for installation.
 0x80070643,ERROR_INSTALL_FAILURE,Windows Update Agent was unable to install due to running out of space in the recovery partition. Manual steps are necessary to complete the installation of this update on devices which are experiencing this error. 
 0x8024402F,WU_E_PT_ECP_SUCCEEDED_WITH_ERRORS,External .cab file processing completed with some errors
-0x80242006,WU_E_UH_INVALIDMETADATA,A handler operation couldn't be completed because the update contains invalid metadata. Rename the software redistribution folder and try to download the updates again:
-Rename the following folders to *.BAK: %systemroot%\system32\catroot2
+0x80242006,WU_E_UH_INVALIDMETADATA,A handler operation couldn't be completed because the update contains invalid metadata. Rename the software redistribution folder and try to download the updates again: Rename the following folders to *.BAK: %systemroot%\system32\catroot2
 0x80070BC9,ERROR_FAIL_REBOOT_REQUIRED,The requested operation failed. Restart the system to roll back changes made.
 0x80200053,BG_E_VALIDATION_FAILED,Ensure that there are no firewalls that filter downloads. Such filtering could lead to incorrect responses being received by the Windows Update client.
 0x80072EFD,TIME_OUT_ERROR,The operation timed out. Ensure the host has access to Microsoft download URLs.
@@ -291,5 +290,6 @@ Rename the following folders to *.BAK: %systemroot%\system32\catroot2
 0x800F0922,CBS_E_INSTALLERS_FAILED,The July cumulative update failed to be installed on Windows Server 2016. In the CBS.log, you may find that updates sometimes roll back when License and Product key tokens fail to be updated. This issue can be resolved by adding write permissions for the User and Network Service accounts to the C:\Windows\System32\spp\ folder.
 0x80070BC9,ERROR_FAIL_REBOOT_REQUIRED,The TrustedInstaller service startup type is set to Manual by Group Policy (GPO), which prevented it from starting to complete pending operations. Further troubleshooting steps can be found here: https://learn.microsoft.com/en-us/troubleshoot/windows-client/installing-updates-features-roles/common-windows-update-errors#0x80070bc9-1
 0x800706BE,Failed to install cumulative updates,The last cumulative update failed to install and was corrupted. To resolve this issue navigate to the registry key for the corrupted update package. Change the current state value to 000020 hex (32 dec) - resolved or 000040 hex (64 dec) - staged or 000070 hex (112 dec) - installed.
+
 
 
