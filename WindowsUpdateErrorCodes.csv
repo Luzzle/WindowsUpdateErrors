@@ -283,13 +283,14 @@ x8024400A,WU_E_PT_SOAPCLIENT_PARSE,Same as SOAPCLIENT_PARSE_ERROR - SOAP client 
 0x80073701,ERROR_SXS_ASSEMBLY_MISSING,Component Store corruption. Please run the following commands on the host and reboot before reattempting the patch: Dism.exe /Online /Cleanup-Image /Restorehealth. Sfc.exe /Scannow
 0x8007371B,ERROR_SXS_TRANSACTION_CLOSURE_INCOMPLETE,Component Store corruption. Please run the following commands on the host and reboot before reattempting the patch: Dism.exe /Online /Cleanup-Image /Restorehealth. Sfc.exe /Scannow
 0x80072F8F,WININET_E_DECODING_FAILED,TLS 1.2 isn't configured correctly on the client.
-0x80072EE2,WININET_E_TIMEOUT,Unable to scan for updates due to a connectivity issue to Windows Update, Configuration Manager, or WSUS.
+0x80072EE2,WININET_E_TIMEOUT,Unable to scan for updates due to a connectivity issue to Windows Update or Configuration Manager or WSUS.
 0x8024401B,WU_E_PT_HTTP_STATUS_PROXY_AUTH_REQ,Unable to authenticate through a proxy server. Either the Winhttp proxy or WinInet proxy settings aren't configured correctly. Please check proxy status with netsh winhttp show proxy
 0x80244022,WU_E_PT_HTTP_STATUS_SERVICE_UNAVAILABLE,Unable to connect to the configured update source. Same as HTTP status 503 - the service is temporarily overloaded.
 0x80070490,ERROR_NOT_FOUND,This error occurs during driver installation as part of the update. Please follow steps at the following url: https://learn.microsoft.com/en-us/troubleshoot/windows-client/installing-updates-features-roles/common-windows-update-errors#0x80070490
 0x800F0922,CBS_E_INSTALLERS_FAILED,The July cumulative update failed to be installed on Windows Server 2016. In the CBS.log, you may find that updates sometimes roll back when License and Product key tokens fail to be updated. This issue can be resolved by adding write permissions for the User and Network Service accounts to the C:\Windows\System32\spp\ folder.
 0x80070BC9,ERROR_FAIL_REBOOT_REQUIRED,The TrustedInstaller service startup type is set to Manual by Group Policy (GPO), which prevented it from starting to complete pending operations. Further troubleshooting steps can be found here: https://learn.microsoft.com/en-us/troubleshoot/windows-client/installing-updates-features-roles/common-windows-update-errors#0x80070bc9-1
 0x800706BE,Failed to install cumulative updates,The last cumulative update failed to install and was corrupted. To resolve this issue navigate to the registry key for the corrupted update package. Change the current state value to 000020 hex (32 dec) - resolved or 000040 hex (64 dec) - staged or 000070 hex (112 dec) - installed.
+
 
 
 
