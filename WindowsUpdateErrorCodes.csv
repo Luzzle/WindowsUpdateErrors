@@ -179,7 +179,6 @@ x8024400A,WU_E_PT_SOAPCLIENT_PARSE,Same as SOAPCLIENT_PARSE_ERROR - SOAP client 
 0x80240008,WU_E_ITEMNOTFOUND,The key for the item queried couldn't be found.
 0x80240009,WU_E_OPERATIONINPROGRESS,Another conflicting operation was in progress. Some operations such as installation can't be performed twice simultaneously.
 0x8024000A,WU_E_COULDNOTCANCEL,Cancellation of the operation wasn't allowed.
-0x8024000B,WU_E_CALL_CANCELLED,Operation was canceled.
 0x8024000C,WU_E_NOOP,No operation was required.
 0x8024000D,WU_E_XML_MISSINGDATA,Windows Update Agent couldn't find required information in the update's XML data.
 0x8024000E,WU_E_XML_INVALID,Windows Update Agent found invalid information in the update's XML data.
@@ -199,7 +198,7 @@ x8024400A,WU_E_PT_SOAPCLIENT_PARSE,Same as SOAPCLIENT_PARSE_ERROR - SOAP client 
 0x8024001F,WU_E_NO_CONNECTION,Operation didn't complete because the network connection was unavailable.
 0x80240020,WU_E_NO_INTERACTIVE_USER,Operation didn't complete because there's no logged-on interactive user.
 0x80240021,WU_E_TIME_OUT,Operation didn't complete because it timed out.
-0x80240022,WU_E_ALL_UPDATES_FAILED,Operation failed for all the updates.
+0x80240022,WU_E_ALL_UPDATES_FAILED,Operation failed for all the updates. Most common issue is that antivirus software is blocking access to certain folders (like SoftwareDistribution). CBS.log analysis needed to determine the file or folder being protected.
 0x80240023,WU_E_EULAS_DECLINED,The license terms for all updates were declined.
 0x80240024,WU_E_NO_UPDATE,There are no updates.
 0x80240025,WU_E_USER_ACCESS_DISABLED,Group Policy settings prevented access to Windows Update.
@@ -228,7 +227,7 @@ x8024400A,WU_E_PT_SOAPCLIENT_PARSE,Same as SOAPCLIENT_PARSE_ERROR - SOAP client 
 0x80240042,WU_E_UNKNOWN_SERVICE,The update service is no longer registered with AU.
 0x80240043,WU_E_NO_UI_SUPPORT,There's no support for WUA UI.
 0x80240FFF,WU_E_UNEXPECTED,An operation failed due to reasons not covered by another error code.
-0x80070422,None,Windows Update service stopped working or isn't running.
+0x80070422,ERROR_SERVICE_DISABLED,Windows Update service stopped working or isn't running.
 0x00240001,WU_S_SERVICE_STOP,Windows Update Agent was stopped successfully.
 0x00240002,WU_S_SELFUPDATE,Windows Update Agent updated itself.
 0x00240003,WU_S_UPDATE_ERROR,Operation completed successfully but there were errors applying the updates.
@@ -261,3 +260,34 @@ x8024400A,WU_E_PT_SOAPCLIENT_PARSE,Same as SOAPCLIENT_PARSE_ERROR - SOAP client 
 0x8024DFFF,WU_E_SETUP_UNEXPECTED,Windows Update Agent couldn't be updated because of an error not covered by another WU_E_SETUP_* error code.
 0x80070070,None,The error occurs because not enough disk space exists on your physical computer or VM to store Windows updates for installation.
 0x80070643,ERROR_INSTALL_FAILURE,Windows Update Agent was unable to install due to running out of space in the recovery partition. Manual steps are necessary to complete the installation of this update on devices which are experiencing this error. 
+0x8024402F,WU_E_PT_ECP_SUCCEEDED_WITH_ERRORS,External .cab file processing completed with some errors
+0x80242006,WU_E_UH_INVALIDMETADATA,A handler operation couldn't be completed because the update contains invalid metadata. Rename the software redistribution folder and try to download the updates again:
+Rename the following folders to *.BAK: "%systemroot%\system32\catroot2"
+0x80070BC9,ERROR_FAIL_REBOOT_REQUIRED,The requested operation failed. Restart the system to roll back changes made.
+0x80200053,BG_E_VALIDATION_FAILED,Ensure that there are no firewalls that filter downloads. Such filtering could lead to incorrect responses being received by the Windows Update client.
+0x80072EFD,TIME_OUT_ERROR,The operation timed out. Ensure the host has access to Microsoft download URLs.
+0x80072EFE,WININET_E_CONNECTION_ABORTED,BITS is unable to transfer the file successfully. Encountered if BITS is broken or if the file being transferred can't be written to the destination folder on the client. This error is caused by connection errors while checking or downloading updates.
+0x80D02002,TIME_OUT_ERROR,The operation timed out. Ensure the host has access to Microsoft download URLs. This can also be potentially caused by issues with system components. Please run DISM and SFC on the host and reboot.
+0X8007000D,ERROR_INVALID_DATA,Indicates data that isn't valid was downloaded or corruption occurred. Attempt to redownload the update and start installation.
+0x8024A10A,USO_E_SERVICE_SHUTTING_DOWN,Indicates that the Windows Update Service is shutting down. This error can occur after a long period of time of inactivity. The system fails to respond, leading to the service being idle and causing the service to shut down. Ensure that the system remains active and the connections remain established to complete the installation.
+0x80246017,WU_E_DM_UNAUTHORIZED_LOCAL_USER,The download failed because the local user was denied authorization to download the content. Ensure that the user attempting to download and install updates has been provided with sufficient privileges to install updates (Local Administrator).
+0x8024000B,WU_E_CALL_CANCELLED,The operation was canceled by the user or service. You might also receive this error when we're unable to filter the results.
+0x800F0821,CBS_E_ABORT,A servicing operation is taking a long time to complete. The servicing stack watchdog timer expires. Extending the timeout will mitigate the issue. Increase the resources on the device. If a virtual machine, increase virtual CPU and memory to speed up operations. Make sure the device has installed the update in KB4493473 or later.
+0x800F0825,CBS_E_CANNOT_UNINSTALL,Typically this error is due component store corruption caused when a component is in a partially installed state. Please run the following commands on the host and reboot before reattempting the patch: Dism.exe /Online /Cleanup-Image /Restorehealth. Sfc.exe /Scannow
+0x800F0920,CBS_E_HANG_DETECTED,Subsequent error logged after getting 0x800f0821.
+0x800F081F,CBS_E_SOURCE_MISSING,Component Store corruption. Please run the following commands on the host and reboot before reattempting the patch: Dism.exe /Online /Cleanup-Image /Restorehealth. Sfc.exe /Scannow
+0x800F0831,CBS_E_STORE_CORRUPTION,Component Store corruption. Please run the following commands on the host and reboot before reattempting the patch: Dism.exe /Online /Cleanup-Image /Restorehealth. Sfc.exe /Scannow
+0x80070005,E_ACCESSDENIED,File system or registry key permissions have been changed and the servicing stack doesn't have the required level of access. Check CBS log at %Windir%\logs\CBS\CBS.log.
+0x80070570,ERROR_FILE_CORRUPT,Component Store corruption. Please run the following commands on the host and reboot before reattempting the patch: Dism.exe /Online /Cleanup-Image /Restorehealth. Sfc.exe /Scannow
+0x80070003,ERROR_PATH_NOT_FOUND,The servicing stack can't access a specific path. Check CBS log at %Windir%\logs\CBS\CBS.log.
+0x80070020,ERROR_SHARING_VIOLATION,Numerous causes. CBS log analysis required. Reported as caused by non-Microsoft filter drivers on the host.
+0x80073701,ERROR_SXS_ASSEMBLY_MISSING,Component Store corruption. Please run the following commands on the host and reboot before reattempting the patch: Dism.exe /Online /Cleanup-Image /Restorehealth. Sfc.exe /Scannow
+0x8007371B,ERROR_SXS_TRANSACTION_CLOSURE_INCOMPLETE,Component Store corruption. Please run the following commands on the host and reboot before reattempting the patch: Dism.exe /Online /Cleanup-Image /Restorehealth. Sfc.exe /Scannow
+0x80072F8F,WININET_E_DECODING_FAILED,TLS 1.2 isn't configured correctly on the client.
+0x80072EE2,WININET_E_TIMEOUT,Unable to scan for updates due to a connectivity issue to Windows Update, Configuration Manager, or WSUS.
+0x8024401B,WU_E_PT_HTTP_STATUS_PROXY_AUTH_REQ,Unable to authenticate through a proxy server. Either the Winhttp proxy or WinInet proxy settings aren't configured correctly. Please check proxy status with "netsh winhttp show proxy"
+0x80244022,WU_E_PT_HTTP_STATUS_SERVICE_UNAVAILABLE,Unable to connect to the configured update source. Same as HTTP status 503 - the service is temporarily overloaded.
+0x80070490,ERROR_NOT_FOUND,This error occurs during driver installation as part of the update. Please follow steps at the following url: https://learn.microsoft.com/en-us/troubleshoot/windows-client/installing-updates-features-roles/common-windows-update-errors#0x80070490
+0x800F0922,CBS_E_INSTALLERS_FAILED,The July cumulative update failed to be installed on Windows Server 2016. In the CBS.log, you may find that updates sometimes roll back when License and Product key tokens fail to be updated. This issue can be resolved by adding write permissions for the "User" and "Network Service" accounts to the C:\Windows\System32\spp\ folder.
+0x80070BC9,ERROR_FAIL_REBOOT_REQUIRED,The TrustedInstaller service startup type is set to "Manual" by Group Policy (GPO), which prevented it from starting to complete pending operations. Further troubleshooting steps can be found here: https://learn.microsoft.com/en-us/troubleshoot/windows-client/installing-updates-features-roles/common-windows-update-errors#0x80070bc9-1
+0x800706BE,Failed to install cumulative updates,The last cumulative update failed to install and was corrupted. To resolve this issue navigate to the registry key for the corrupted update package. Change the "current state" value to 000020 hex (32 dec) - resolved or 000040 hex (64 dec) - staged or 000070 hex (112 dec) - installed.
