@@ -168,7 +168,7 @@ x8024400A,WU_E_PT_SOAPCLIENT_PARSE,Same as SOAPCLIENT_PARSE_ERROR - SOAP client 
 0x8024C006,WU_E_DRV_SYNC_FAILED,Driver synchronization failed.
 0x8024C007,WU_E_DRV_NO_PRINTER_CONTENT,Information required for the synchronization of applicable printers is missing.
 0x8024CFFF,WU_E_DRV_UNEXPECTED,A driver error not covered by another WU_E_DRV_* code.
-0x80070020,InstallFileLocked,"Couldn't access the file because it is already in use. This can occur when the installer tries to replace a file that an antivirus, antimalware or backup program is currently scanning."
+0x80070020,InstallFileLocked,Couldn't access the file because it is already in use. This can occur when the installer tries to replace a file that an antivirus, antimalware or backup program is currently scanning.
 0x80240001,WU_E_NO_SERVICE,Windows Update Agent was unable to provide the service.
 0x80240002,WU_E_MAX_CAPACITY_REACHED,The maximum capacity of the service was exceeded.
 0x80240003,WU_E_UNKNOWN_ID,An ID can't be found.
@@ -262,7 +262,7 @@ x8024400A,WU_E_PT_SOAPCLIENT_PARSE,Same as SOAPCLIENT_PARSE_ERROR - SOAP client 
 0x80070643,ERROR_INSTALL_FAILURE,Windows Update Agent was unable to install due to running out of space in the recovery partition. Manual steps are necessary to complete the installation of this update on devices which are experiencing this error. 
 0x8024402F,WU_E_PT_ECP_SUCCEEDED_WITH_ERRORS,External .cab file processing completed with some errors
 0x80242006,WU_E_UH_INVALIDMETADATA,A handler operation couldn't be completed because the update contains invalid metadata. Rename the software redistribution folder and try to download the updates again:
-Rename the following folders to *.BAK: "%systemroot%\system32\catroot2"
+Rename the following folders to *.BAK: %systemroot%\system32\catroot2
 0x80070BC9,ERROR_FAIL_REBOOT_REQUIRED,The requested operation failed. Restart the system to roll back changes made.
 0x80200053,BG_E_VALIDATION_FAILED,Ensure that there are no firewalls that filter downloads. Such filtering could lead to incorrect responses being received by the Windows Update client.
 0x80072EFD,TIME_OUT_ERROR,The operation timed out. Ensure the host has access to Microsoft download URLs.
@@ -285,9 +285,10 @@ Rename the following folders to *.BAK: "%systemroot%\system32\catroot2"
 0x8007371B,ERROR_SXS_TRANSACTION_CLOSURE_INCOMPLETE,Component Store corruption. Please run the following commands on the host and reboot before reattempting the patch: Dism.exe /Online /Cleanup-Image /Restorehealth. Sfc.exe /Scannow
 0x80072F8F,WININET_E_DECODING_FAILED,TLS 1.2 isn't configured correctly on the client.
 0x80072EE2,WININET_E_TIMEOUT,Unable to scan for updates due to a connectivity issue to Windows Update, Configuration Manager, or WSUS.
-0x8024401B,WU_E_PT_HTTP_STATUS_PROXY_AUTH_REQ,Unable to authenticate through a proxy server. Either the Winhttp proxy or WinInet proxy settings aren't configured correctly. Please check proxy status with "netsh winhttp show proxy"
+0x8024401B,WU_E_PT_HTTP_STATUS_PROXY_AUTH_REQ,Unable to authenticate through a proxy server. Either the Winhttp proxy or WinInet proxy settings aren't configured correctly. Please check proxy status with netsh winhttp show proxy
 0x80244022,WU_E_PT_HTTP_STATUS_SERVICE_UNAVAILABLE,Unable to connect to the configured update source. Same as HTTP status 503 - the service is temporarily overloaded.
 0x80070490,ERROR_NOT_FOUND,This error occurs during driver installation as part of the update. Please follow steps at the following url: https://learn.microsoft.com/en-us/troubleshoot/windows-client/installing-updates-features-roles/common-windows-update-errors#0x80070490
-0x800F0922,CBS_E_INSTALLERS_FAILED,The July cumulative update failed to be installed on Windows Server 2016. In the CBS.log, you may find that updates sometimes roll back when License and Product key tokens fail to be updated. This issue can be resolved by adding write permissions for the "User" and "Network Service" accounts to the C:\Windows\System32\spp\ folder.
-0x80070BC9,ERROR_FAIL_REBOOT_REQUIRED,The TrustedInstaller service startup type is set to "Manual" by Group Policy (GPO), which prevented it from starting to complete pending operations. Further troubleshooting steps can be found here: https://learn.microsoft.com/en-us/troubleshoot/windows-client/installing-updates-features-roles/common-windows-update-errors#0x80070bc9-1
-0x800706BE,Failed to install cumulative updates,The last cumulative update failed to install and was corrupted. To resolve this issue navigate to the registry key for the corrupted update package. Change the "current state" value to 000020 hex (32 dec) - resolved or 000040 hex (64 dec) - staged or 000070 hex (112 dec) - installed.
+0x800F0922,CBS_E_INSTALLERS_FAILED,The July cumulative update failed to be installed on Windows Server 2016. In the CBS.log, you may find that updates sometimes roll back when License and Product key tokens fail to be updated. This issue can be resolved by adding write permissions for the User and Network Service accounts to the C:\Windows\System32\spp\ folder.
+0x80070BC9,ERROR_FAIL_REBOOT_REQUIRED,The TrustedInstaller service startup type is set to Manual by Group Policy (GPO), which prevented it from starting to complete pending operations. Further troubleshooting steps can be found here: https://learn.microsoft.com/en-us/troubleshoot/windows-client/installing-updates-features-roles/common-windows-update-errors#0x80070bc9-1
+0x800706BE,Failed to install cumulative updates,The last cumulative update failed to install and was corrupted. To resolve this issue navigate to the registry key for the corrupted update package. Change the current state value to 000020 hex (32 dec) - resolved or 000040 hex (64 dec) - staged or 000070 hex (112 dec) - installed.
+
