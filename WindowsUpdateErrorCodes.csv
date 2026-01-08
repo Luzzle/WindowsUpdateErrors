@@ -72,7 +72,6 @@ x8024400A,WU_E_PT_SOAPCLIENT_PARSE,Same as SOAPCLIENT_PARSE_ERROR - SOAP client 
 0x8024401F,WU_E_PT_HTTP_STATUS_SERVER_ERROR,Same as HTTP status 500 - an error internal to the server prevented fulfilling the request.
 0x80244020,WU_E_PT_HTTP_STATUS_NOT_SUPPORTED,Same as HTTP status 500 - server doesn't support the functionality required to fulfill the request.
 0x80244021,WU_E_PT_HTTP_STATUS_BAD_GATEWAY,Same as HTTP status 502 - the server while acting as a gateway or a proxy received an invalid response from the upstream server it accessed in attempting to fulfill the request.
-0x80244022,WU_E_PT_HTTP_STATUS_SERVICE_UNAVAIL,Same as HTTP status 503 - the service is temporarily overloaded.
 0x80244023,WU_E_PT_HTTP_STATUS_GATEWAY_TIMEOUT,Same as HTTP status 503 - the request was timed out waiting for a gateway.
 0x80244024,WU_E_PT_HTTP_STATUS_VERSION_NOT_SUP,Same as HTTP status 505 - the server doesn't support the HTTP protocol version used for the request.
 0x80244025,WU_E_PT_FILE_LOCATIONS_CHANGED,Operation failed due to a changed file location; refresh internal state and resend.
@@ -83,7 +82,6 @@ x8024400A,WU_E_PT_SOAPCLIENT_PARSE,Same as SOAPCLIENT_PARSE_ERROR - SOAP client 
 0x8024402A,WU_E_PT_CONFIG_PROP_MISSING,A configuration property value was missing.
 0x8024402B,WU_E_PT_HTTP_STATUS_NOT_MAPPED,The HTTP request couldn't be completed and the reason didn't correspond to any of the WU_E_PT_HTTP_* error codes.
 0x8024402C,WU_E_PT_WINHTTP_NAME_NOT_RESOLVED,Same as ERROR_WINHTTP_NAME_NOT_RESOLVED - the proxy server or target server name can't be resolved.
-0x8024402F,WU_E_PT_ECP_SUCCEEDED_WITH_ERRORS,External cab file processing completed with some errors.
 0x80244030,WU_E_PT_ECP_INIT_FAILED,The external cab processor initialization didn't complete.
 0x80244031,WU_E_PT_ECP_INVALID_FILE_FORMAT,The format of a metadata file was invalid.
 0x80244032,WU_E_PT_ECP_INVALID_METADATA,External cab processor found invalid metadata.
@@ -291,3 +289,4 @@ x8024400A,WU_E_PT_SOAPCLIENT_PARSE,Same as SOAPCLIENT_PARSE_ERROR - SOAP client 
 0x80070BC9,ERROR_FAIL_REBOOT_REQUIRED,The TrustedInstaller service startup type is set to Manual by Group Policy (GPO) which prevented it from starting to complete pending operations. Further troubleshooting steps can be found here: https://learn.microsoft.com/en-us/troubleshoot/windows-client/installing-updates-features-roles/common-windows-update-errors#0x80070bc9-1
 0x800706BE,Failed to install cumulative updates,The last cumulative update failed to install and was corrupted. To resolve this issue navigate to the registry key for the corrupted update package. Change the current state value to 000020 hex (32 dec) - resolved or 000040 hex (64 dec) - staged or 000070 hex (112 dec) - installed.
 0x80240438,WU_E_PT_ENDPOINT_UNREACHABLE,There is no route or network connectivity to the endpoint. Please check WSUS server configuration and connectivity.
+
