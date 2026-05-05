@@ -257,7 +257,7 @@ x8024400A,WU_E_PT_SOAPCLIENT_PARSE,Same as SOAPCLIENT_PARSE_ERROR - SOAP client 
 0x8024D013,WU_E_SETUP_WRONG_SERVER_VERSION,Windows Update Agent couldn't be updated because the server doesn't contain update information for this version.
 0x8024DFFF,WU_E_SETUP_UNEXPECTED,Windows Update Agent couldn't be updated because of an error not covered by another WU_E_SETUP_* error code.
 0x80070070,None,The error occurs because not enough disk space exists on your physical computer or VM to store Windows updates for installation.
-0x80070643,ERROR_INSTALL_FAILURE,Windows Update Agent was unable to install due to running out of space in the recovery partition.\nManual steps are necessary to complete the installation of this update on devices which are experiencing this error.\nPLEASE REBOOT THE SERVER FIRST BEFORE ATTEMPTING TO RESIZE RECOVERY PARTITION.
+0x80070643,ERROR_INSTALL_FAILURE,Windows Update Agent was unable to install due to running out of space in the recovery partition.<br/>Manual steps are necessary to complete the installation of this update on devices which are experiencing this error.<br/>PLEASE REBOOT THE SERVER FIRST BEFORE ATTEMPTING TO RESIZE RECOVERY PARTITION.
 0x8024402F,WU_E_PT_ECP_SUCCEEDED_WITH_ERRORS,External .cab file processing completed with some errors
 0x80242006,WU_E_UH_INVALIDMETADATA,A handler operation couldn't be completed because the update contains invalid metadata. Rename the software redistribution folder and try to download the updates again: Rename the following folders to *.BAK: %systemroot%\system32\catroot2
 0x80070BC9,ERROR_FAIL_REBOOT_REQUIRED,The requested operation failed. Restart the system to roll back changes made.
